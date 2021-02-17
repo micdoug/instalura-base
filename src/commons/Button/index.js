@@ -1,14 +1,17 @@
 import styled, { css } from 'styled-components';
 import get from 'lodash/get';
+import { TextThemeVariants } from "../../components/Text";
 
 const ButtonGhost = css`
   background: transparent;
   color: ${(props) => get(props.theme, `colors.${props.variant}.color`)};
+  ${TextThemeVariants.smallestException}
 `;
 
 const ButtonDefault = css`
   color: ${(props) => get(props.theme, `colors.${props.variant}.contrastText`)};
   background-color: ${(props) => get(props.theme, `colors.${props.variant}.color`)};
+  ${TextThemeVariants.smallestException}
 `;
 
 export const Button = styled.button`
