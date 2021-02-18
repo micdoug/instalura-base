@@ -1,17 +1,16 @@
 import styled, { css } from 'styled-components';
 import get from 'lodash/get';
-import { TextThemeVariants } from "../../components/Text";
+import { TextThemeVariants } from "../../foundation/Text";
+import breakpointsMedia from '../../../theme/utils/breakpointsMedia';
 
 const ButtonGhost = css`
   background: transparent;
   color: ${(props) => get(props.theme, `colors.${props.variant}.color`)};
-  ${TextThemeVariants.smallestException}
 `;
 
 const ButtonDefault = css`
   color: ${(props) => get(props.theme, `colors.${props.variant}.contrastText`)};
   background-color: ${(props) => get(props.theme, `colors.${props.variant}.color`)};
-  ${TextThemeVariants.smallestException}
 `;
 
 export const Button = styled.button`
@@ -26,4 +25,15 @@ export const Button = styled.button`
   &:hover,  &:focus {
     opacity: .5;
   }
+  ${breakpointsMedia({
+  xs: css`
+    ${TextThemeVariants.smallestException}
+  `,
+  md: css`
+    ${TextThemeVariants.paragraph1}
+  `,
+  bla: css`
+    color: red !important;
+  `
+})}
 `;

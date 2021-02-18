@@ -1,5 +1,5 @@
-import Menu from '../src/components/Menu';
-import Footer from '../src/commons/Footer';
+import Menu from '../src/components/commons/Menu';
+import Footer from '../src/components/commons/Footer';
 import styled from 'styled-components';
 
 const HomeWrapper = styled.div`

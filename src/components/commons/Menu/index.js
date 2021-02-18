@@ -1,8 +1,8 @@
 import React from 'react';
 import { MenuWrapper } from "./styles/MenuWrapper";
-import { Logo } from "../../theme/Logo";
-import { Button } from "../../commons/Button";
-import { Text } from "../Text";
+import { Logo } from "../../../theme/Logo";
+import { Button } from "../Button";
+import { Text } from "../../foundation/Text";
 
 const links = [
   { key: 1, texto: 'Home', url: '/' },
