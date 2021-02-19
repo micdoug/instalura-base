@@ -1,6 +1,8 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
+import propToStyle from "../../../theme/utils/propToStyle";
+import get from 'lodash/get';
 
 function _createTextThemeVariant(variantName) {
   return css`
@@ -28,6 +30,10 @@ export const TextThemeVariants = {
 
 const TextBase = styled.span`
   ${({ variant }) => TextThemeVariants[variant]}
+  ${propToStyle('textAlign')}
+  ${({ theme, color }) => color ? css`
+    color: ${get(theme.colors, `${color}.color`)}
+  ` : ''}
 `;
 
 export function Text({ tag, variant, children, ...rest }) {
@@ -39,10 +45,13 @@ export function Text({ tag, variant, children, ...rest }) {
 Text.defaultProps = {
   tag: 'span',
   variant: 'pagagraph1',
+  textAlign: 'start',
+  color: null,
 };
 
 Text.propTypes = {
   tag: PropTypes.elementType.isRequired,
   variant: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
+  color: PropTypes.string,
 }

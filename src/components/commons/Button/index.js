@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 import get from 'lodash/get';
 import { TextThemeVariants } from "../../foundation/Text";
 import breakpointsMedia from '../../../theme/utils/breakpointsMedia';
+import propToStyle from "../../../theme/utils/propToStyle";
 
 const ButtonGhost = css`
   background: transparent;
@@ -27,13 +28,12 @@ export const Button = styled.button`
   }
   ${breakpointsMedia({
   xs: css`
-    ${TextThemeVariants.smallestException}
-  `,
+      ${TextThemeVariants.smallestException}
+    `,
   md: css`
-    ${TextThemeVariants.paragraph1}
-  `,
-  bla: css`
-    color: red !important;
-  `
+      ${TextThemeVariants.paragraph1}
+    `
 })}
+  ${propToStyle('margin')}
+  ${propToStyle('display')}
 `;
