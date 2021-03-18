@@ -6,7 +6,7 @@ const FooterWrapper = styled.footer`
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 4px; 
+  border-radius: 4px;
   padding-right: 28px;
   padding-left: 28px;
   img {
@@ -42,4 +42,4 @@ export default function Footer(props) {
       </p>
     </FooterWrapper>
   );
-} 
+}

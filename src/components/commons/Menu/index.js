@@ -1,8 +1,8 @@
 import React from 'react';
-import { MenuWrapper } from "./styles/MenuWrapper";
-import { Logo } from "../../../theme/Logo";
-import { Button } from "../Button";
-import { Text } from "../../foundation/Text";
+import MenuWrapper from './styles/MenuWrapper';
+import Logo from '../../../theme/Logo';
+import Button from '../Button';
+import Text from '../../foundation/Text';
 
 const links = [
   { key: 1, texto: 'Home', url: '/' },
@@ -17,7 +17,7 @@ export default function Menu() {
         <Logo />
       </MenuWrapper.LeftSide>
       <MenuWrapper.CentralSide>
-        {links.map(link => (
+        {links.map((link) => (
           <li key={link.key}>
             <Text variant="smallException" tag="a" href={link.url}>{link.texto}</Text>
           </li>
